@@ -13,6 +13,24 @@ Sistema que organiza la información básica de la comunidad académica de una
 universidad: personas, programas académicos y asignaturas. Es un único proyecto
 que se desarrolla por fases aplicando Programación Orientada a Objetos en Python.
 
+## Estructura de los archivos
+
+- `main.py`: programa principal, crea objetos y muestra su información.
+- `models/`: clases del sistema (`persona.py`, `programa_academico.py`, `asignatura.py`).
+- `Diagramas/`: diagrama de clases hecho en draw.io.
+
+## Instrucciones para ejecutar
+
+Con Python instalado, ejecutar en la carpeta del proyecto:
+
+```
+py main.py
+```
+
+## Herencia, sobrescritura y polimorfismo
+
+Pendiente: se explicará cuando se desarrollen las fases 3, 4 y 5 del proyecto.
+
 ## Uso de herramientas de inteligencia artificial
 
 Usé Claude (una herramienta de IA) para entender términos de POO, para armar
