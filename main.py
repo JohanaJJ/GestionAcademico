@@ -1,6 +1,9 @@
 from models.persona import Persona
 from models.programa_academico import ProgramaAcademico
 from models.asignatura import Asignatura
+from models.estudiante import Estudiante
+from models.docente import Docente
+from models.administrativo import Administrativo
 
 # Programas académicos
 matematicas = ProgramaAcademico("MAT01", "Matemáticas", "Ciencias", 8)
@@ -56,3 +59,43 @@ print("Los datos se conservaron:")
 print("Correo:", persona1.get_correo())
 print("Semestres:", matematicas.get_num_semestres())
 print("Créditos:", calculo.get_creditos())
+
+# FASE 3: herencia (Estudiante, Docente y Administrativo)
+
+estudiante = Estudiante("1000000002", "Lucia Rangel", "Luciarge@gmail.com",
+                        "E001", matematicas, 4, 4.2)
+docente = Docente("30000001", "Natalia Torres", "natalia.torres@gmail.com",
+                  "D001", "Ciencias", "Tiempo completo", 40)
+administrativo = Administrativo("40000001", "David Herrera", "davidher@gmail.com",
+                                "A001", "Registro Académico", "Coordinadora", "Diurna")
+
+print("\nFASE 3: DATOS COMUNES HEREDADOS DE PERSONA")
+estudiante.mostrar_informacion()
+print()
+docente.mostrar_informacion()
+print()
+administrativo.mostrar_informacion()
+
+print("\n FASE 3: DATOS PROPIOS DE CADA TIPO")
+print("Estudiante:", estudiante.get_codigo_estudiantil(),
+      "|", estudiante.get_programa().get_nombre(),
+      "| Semestre", estudiante.get_semestre(),
+      "| Promedio", estudiante.get_promedio())
+print("Docente:", docente.get_numero_empleado(),
+      "|", docente.get_facultad(),
+      "|", docente.get_tipo_contratacion(),
+      "|", docente.get_horas_semanales(), "horas")
+print("Administrativo:", administrativo.get_numero_empleado(),
+      "|", administrativo.get_dependencia(),
+      "|", administrativo.get_cargo(),
+      "|", administrativo.get_jornada())
+
+print("\nFASE 3: ¿SON PERSONAS?")
+print("El estudiante es una Persona:", isinstance(estudiante, Persona))
+print("El docente es una Persona:", isinstance(docente, Persona))
+print("El administrativo es una Persona:", isinstance(administrativo, Persona))
+
+print("\nFASE 3: VALIDACIÓN EN LAS SUBCLASES")
+estudiante.set_promedio(7)
+docente.set_horas_semanales(-5)
+estudiante.set_correo("") 
