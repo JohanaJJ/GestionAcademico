@@ -35,7 +35,14 @@ reutilizan la identificación, el nombre, el correo y sus métodos sin repetirlo
 agrega solo sus datos propios y usa `super().__init__()` para pasarle los datos comunes
 a `Persona`.
 
-Pendiente: la sobrescritura y el polimorfismo se explicarán al desarrollar las fases 4 y 5.
+**Sobrescritura:** las tres clases redefinen `mostrar_informacion()`, que primero llama a la
+de `Persona` con `super()` y luego agrega sus datos propios, y `realizar_actividad_principal()`,
+que produce un mensaje distinto para cada tipo de persona.
+
+**Polimorfismo:** en `main.py` una sola lista con dos estudiantes, dos docentes y dos
+administrativos se recorre con un único ciclo `for`. En cada vuelta se llaman los mismos
+métodos y Python ejecuta la versión que corresponde al tipo real del objeto, sin usar
+condicionales por tipo.
 
 ## Uso de herramientas de inteligencia artificial
 
