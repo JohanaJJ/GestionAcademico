@@ -1,6 +1,7 @@
 from models.persona import Persona
 
 class Docente(Persona):
+    """Un docente ES una Persona: hereda identificación, nombre y correo."""
 
     def __init__(self, identificacion, nombre, correo,
                  numero_empleado, facultad, tipo_contratacion, horas_semanales):
@@ -10,6 +11,7 @@ class Docente(Persona):
         self.__tipo_contratacion = tipo_contratacion
         self.__horas_semanales = horas_semanales
 
+    # Métodos de consulta (get)
     def get_numero_empleado(self):
         return self.__numero_empleado
 
@@ -22,6 +24,7 @@ class Docente(Persona):
     def get_horas_semanales(self):
         return self.__horas_semanales
 
+    # Métodos de modificación (set)
     def set_numero_empleado(self, numero_empleado):
         self.__numero_empleado = numero_empleado
 
@@ -37,3 +40,15 @@ class Docente(Persona):
             return False
         self.__horas_semanales = horas_semanales
         return True
+
+  
+    def mostrar_informacion(self):
+        super().mostrar_informacion()
+        print("Tipo: Docente")
+        print(f"Número de empleado: {self.__numero_empleado}")
+        print(f"Facultad: {self.__facultad}")
+        print(f"Tipo de contratación: {self.__tipo_contratacion}")
+        print(f"Horas semanales: {self.__horas_semanales}")
+
+    def realizar_actividad_principal(self):
+        print(f"{self.get_nombre()} orienta clases en la Facultad de {self.__facultad}.")

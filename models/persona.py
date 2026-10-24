@@ -34,3 +34,5 @@ class Persona:
         print(f"Identificación: {self.__identificacion}")
         print(f"Nombre: {self.__nombre}")
         print(f"Correo: {self.__correo}")
+    def realizar_actividad_principal(self):
+        print(f"{self.get_nombre()} hace parte de la comunidad académica.")

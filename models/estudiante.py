@@ -1,16 +1,17 @@
 from models.persona import Persona
 
 class Estudiante(Persona):
+    """Un estudiante ES una Persona: hereda identificación, nombre y correo."""
+
     def __init__(self, identificacion, nombre, correo,
                  codigo_estudiantil, programa, semestre, promedio):
-    
         super().__init__(identificacion, nombre, correo)
-
         self.__codigo_estudiantil = codigo_estudiantil
         self.__programa = programa  # objeto de tipo ProgramaAcademico
         self.__semestre = semestre
         self.__promedio = promedio
 
+    # Métodos de consulta (get)
     def get_codigo_estudiantil(self):
         return self.__codigo_estudiantil
 
@@ -23,6 +24,7 @@ class Estudiante(Persona):
     def get_promedio(self):
         return self.__promedio
 
+    # Métodos de modificación (set)
     def set_codigo_estudiantil(self, codigo_estudiantil):
         self.__codigo_estudiantil = codigo_estudiantil
 
@@ -42,3 +44,16 @@ class Estudiante(Persona):
             return False
         self.__promedio = promedio
         return True
+
+    # (Fase 4)
+    def mostrar_informacion(self):
+        super().mostrar_informacion()
+        print("Tipo: Estudiante")
+        print(f"Código estudiantil: {self.__codigo_estudiantil}")
+        print(f"Programa: {self.__programa.get_nombre()}")
+        print(f"Semestre: {self.__semestre}")
+        print(f"Promedio acumulado: {self.__promedio}")
+
+    def realizar_actividad_principal(self):
+        print(f"{self.get_nombre()} cursa {self.__programa.get_nombre()} "
+              f"y se encuentra en el semestre {self.__semestre}.")

@@ -99,3 +99,29 @@ print("\nFASE 3: VALIDACIÓN EN LAS SUBCLASES")
 estudiante.set_promedio(7)
 docente.set_horas_semanales(-5)
 estudiante.set_correo("") 
+
+# FASE 4: comportamientos particulares (sobrescritura)
+
+print("\n=== FASE 4: ACTIVIDAD PRINCIPAL DE CADA TIPO ===")
+estudiante.realizar_actividad_principal()
+docente.realizar_actividad_principal()
+administrativo.realizar_actividad_principal()
+
+
+# FASE 5: polimorfismo (una sola colección y un único ciclo)
+
+estudiante2 = Estudiante("1000000003", "Camilo Pérez", "camilo.perez@gmail.com",
+                         "E002", medicina, 2, 3.8)
+docente2 = Docente("30000002", "Andrés Londoño", "andres.londono@gmail.com",
+                   "D002", "Ciencias de la Salud", "Cátedra", 12)
+administrativo2 = Administrativo("40000002", "Sofía Gómez", "sofia.gomez@gmail.com",
+                                 "A002", "Tecnología", "Analista de soporte", "Mixta")
+
+comunidad = [estudiante, docente, administrativo,
+             estudiante2, docente2, administrativo2]
+
+print("\n=== FASE 5: REPORTE GENERAL (POLIMORFISMO) ===")
+for persona in comunidad:
+    persona.mostrar_informacion()
+    persona.realizar_actividad_principal()
+    print("-" * 50)
