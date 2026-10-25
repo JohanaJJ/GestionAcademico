@@ -45,7 +45,7 @@ class Estudiante(Persona):
         self.__promedio = promedio
         return True
 
-    # (Fase 4)
+
     def mostrar_informacion(self):
         super().mostrar_informacion()
         print("Tipo: Estudiante")
