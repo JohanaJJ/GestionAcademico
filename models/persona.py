@@ -1,4 +1,10 @@
-class Persona:
+from abc import ABC, abstractmethod
+
+
+class Persona(ABC):
+    """Clase abstracta: representa lo común a toda persona de la comunidad académica:
+    identificación, nombre y correo."""
+
     def __init__(self, identificacion, nombre, correo):
         self.__identificacion = identificacion
         self.__nombre = nombre
@@ -34,5 +40,8 @@ class Persona:
         print(f"Identificación: {self.__identificacion}")
         print(f"Nombre: {self.__nombre}")
         print(f"Correo: {self.__correo}")
+
+    @abstractmethod
     def realizar_actividad_principal(self):
-        print(f"{self.get_nombre()} hace parte de la comunidad académica.")
+        """Cada clase derivada debe definir su propia actividad."""
+        pass
